@@ -46,7 +46,7 @@ public class BattleManager : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         yield return new WaitForSeconds(1f);
-        playerHp -= 15;
+        playerHp -= 5;
         UpdateBattleUI();
         if (playerHp <= 0)
         {

@@ -4025,9 +4025,24 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5628018140324151388, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5628018141983903104, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628018141983903104, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628018141983903104, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5628018141983903106, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
@@ -4083,7 +4098,7 @@ PrefabInstance:
     - target: {fileID: 5628018141983903107, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5628018141983903107, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
         type: 3}
@@ -4093,7 +4108,7 @@ PrefabInstance:
     - target: {fileID: 5628018141983903107, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 689437287
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5628018141983903116, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
         type: 3}
@@ -4299,7 +4314,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1630439141}
   - component: {fileID: 1630439140}
-  - component: {fileID: 1630439139}
+  - component: {fileID: 1630439143}
+  - component: {fileID: 1630439142}
   m_Layer: 0
   m_Name: BattleTrigger
   m_TagString: Untagged
@@ -4307,27 +4323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1630439139
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630439138}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 64
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1630439140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4355,6 +4350,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630439142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630439138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a87c4b1108a443e97264aa2de41bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1630439143
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630439138}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
