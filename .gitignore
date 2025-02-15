@@ -7,8 +7,27 @@
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
 
+# Asset files to ignore
+[Aa]ssets/TextMesh*Pro/
+[Aa]ssets/Plugins/
+[Aa]ssets/StreamingAssets/
+[Aa]ssets/AddressableAssetsData/
+
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
+
+# Ignore large media files
+*.psd
+*.ai
+*.tif
+*.tiff
+*.mp3
+*.wav
+*.mp4
+*.mov
+*.avi
+*.asf
+*.fbx
 
 # Visual Studio / MonoDevelop / Rider generated
 .vs/
