@@ -5,6 +5,8 @@ using System.Collections;
 
 public class BattleManager : MonoBehaviour
 {
+    public GameObject enemyObj;
+    private SpriteRenderer enemySprite;
     public Text playerHPText;
     public Text enemyHPText;
     public Button attackButton;
@@ -16,6 +18,14 @@ public class BattleManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (enemyObj == null)
+        {
+            enemyObj = GameObject.Find("Enemy");
+        }
+        
+        // enemyObjからSpriteRendererコンポーネントを取得
+        enemySprite = enemyObj.GetComponent<SpriteRenderer>();
+        
         UpdateBattleUI();
     }
 
@@ -24,6 +34,12 @@ public class BattleManager : MonoBehaviour
         if (!isPlayerTurn) return;
 
         enemyHp -= 10;
+
+        if (enemySprite != null)
+        {
+            StartCoroutine(FlashRed(enemySprite, 0.2f));
+        }
+
         UpdateBattleUI();
         if (enemyHp <= 0)
         {
@@ -39,6 +55,7 @@ public class BattleManager : MonoBehaviour
     {
         if (!isPlayerTurn) return;
         UpdateBattleUI();
+
         isPlayerTurn = false;
         StartCoroutine(EnemyTurn());
     }
@@ -81,5 +98,13 @@ public class BattleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("MainScene");
+    }
+
+    IEnumerator FlashRed(SpriteRenderer sprite, float duration)
+    {
+        Color originalColor = sprite.color;
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(duration);
+        sprite.color = originalColor;
     }
 }
