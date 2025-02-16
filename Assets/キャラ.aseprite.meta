@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08a2502203e8c4f92ba797328eb228fe
+guid: 492696cc481544c4ea75a9a650ec3222
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638753301246405520
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 23
       height: 45
-    spriteID: ecb02872739e54c979155d084feaa972
+    spriteID: f0eb762a9f89e4971a7a6d14bc4ed638
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -156,7 +156,7 @@ ScriptedImporter:
       y: 57
       width: 23
       height: 45
-    spriteID: 824de394715a64e9cbefbedd775be779
+    spriteID: 794fd560b535d48378b7f9e0b781816c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -177,7 +177,7 @@ ScriptedImporter:
       y: 4
       width: 23
       height: 45
-    spriteID: d180af419362a41079fb13e6cda9d238
+    spriteID: 44eb6d618dcf54df488261d0eb81e0fc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,7 +198,7 @@ ScriptedImporter:
       y: 57
       width: 23
       height: 45
-    spriteID: 06cd9889dc8014d3f8f04c1ac60fe3d1
+    spriteID: e2786f57dbb2f47a99f6d35fde8dac25
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -210,8 +210,8 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -524476339
-    name: player2
+    guid: -1648448129
+    name: "\u30AD\u30E3\u30E9"
     layerFlags: 0
     layerType: 0
     blendMode: 0
@@ -224,7 +224,7 @@ ScriptedImporter:
         y: 0
         width: 32
         height: 48
-      spriteId: ecb02872739e54c979155d084feaa972
+      spriteId: f0eb762a9f89e4971a7a6d14bc4ed638
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -233,7 +233,7 @@ ScriptedImporter:
         y: 0
         width: 32
         height: 48
-      spriteId: 824de394715a64e9cbefbedd775be779
+      spriteId: 794fd560b535d48378b7f9e0b781816c
     - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -242,7 +242,7 @@ ScriptedImporter:
         y: 0
         width: 32
         height: 48
-      spriteId: d180af419362a41079fb13e6cda9d238
+      spriteId: 44eb6d618dcf54df488261d0eb81e0fc
     - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -251,7 +251,7 @@ ScriptedImporter:
         y: 0
         width: 32
         height: 48
-      spriteId: 06cd9889dc8014d3f8f04c1ac60fe3d1
+      spriteId: e2786f57dbb2f47a99f6d35fde8dac25
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -259,66 +259,6 @@ ScriptedImporter:
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Android
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: iPhone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
