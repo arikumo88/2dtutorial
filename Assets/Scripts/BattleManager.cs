@@ -5,6 +5,7 @@ using System.Collections;
 
 public class BattleManager : MonoBehaviour
 {
+    //敵オブジェクト
     public GameObject enemyObj;
     private SpriteRenderer enemySprite;
     public Text playerHPText;
