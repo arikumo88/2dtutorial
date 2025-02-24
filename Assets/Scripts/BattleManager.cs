@@ -16,8 +16,11 @@ public class BattleManager : MonoBehaviour
     private int playerHp = 100;
     private int enemyHp = 100;
     private bool isPlayerTurn = true;
+    private bool bgmChanged = false;
     public AudioSource audioSource;
     public AudioClip bgmClip;
+    public AudioClip bgmClipIntense;
+    public float bgmFadeDuration = 1.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
@@ -32,12 +35,7 @@ public class BattleManager : MonoBehaviour
         
         UpdateBattleUI();
 
-        if (audioSource != null && bgmClip != null)
-        {
-            audioSource.clip = bgmClip;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
+        PlayBGM(bgmClip);
     }
 
     public void OnAttack()
@@ -56,6 +54,12 @@ public class BattleManager : MonoBehaviour
         {
             EndBattle(true);
             return;
+        }
+
+        if (enemyHp <= 50 && !bgmChanged)
+        {
+            bgmChanged = true;
+            StartCoroutine(ChangeBGM());
         }
 
         isPlayerTurn = false;
@@ -117,5 +121,44 @@ public class BattleManager : MonoBehaviour
         sprite.color = Color.red;
         yield return new WaitForSeconds(duration);
         sprite.color = originalColor;
+    }
+
+    void PlayBGM(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.clip = clip;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+    }
+
+    IEnumerator ChangeBGM()
+    {
+        if (audioSource != null)
+        {
+            float startVolume = audioSource.volume;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < bgmFadeDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                audioSource.volume = Mathf.Lerp(startVolume, 0f, elapsedTime / bgmFadeDuration);
+                yield return null;
+            }
+
+            audioSource.Stop();
+            audioSource.volume = startVolume;
+
+            for (int i = 0; i < 4; i++)
+            {
+                enemySprite.color = Color.red;
+                yield return new WaitForSeconds(0.1f);
+                enemySprite.color = Color.white;
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            PlayBGM(bgmClipIntense);
+        }
     }
 }
