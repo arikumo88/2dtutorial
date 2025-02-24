@@ -195,6 +195,9 @@ public class BattleManager : MonoBehaviour
             audioSource.PlayOneShot(playerHitSE);
         }
 
+        //カメラを揺らす
+        StartCoroutine(ShakeCamera(0.1f, 0.1f));
+
         //画面を赤くフラッシュ
         StartCoroutine(FlashScreen(flashDuration));
 
@@ -234,7 +237,7 @@ public class BattleManager : MonoBehaviour
             yield return StartCoroutine(FadeOutBGM(1.0f));
         } 
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("MainScene");
     }
 
@@ -255,6 +258,23 @@ public class BattleManager : MonoBehaviour
             audioSource.Stop();
             audioSource.volume = startVolume;
         }
+    }
+
+    IEnumerator ShakeCamera(float duration, float magnitude)
+    {
+        Vector3 originalPos = Camera.main.transform.position;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float yOffset = Random.Range(-magnitude, magnitude);
+            Camera.main.transform.position = new Vector3(originalPos.x, originalPos.y + yOffset, originalPos.z);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        Camera.main.transform.position = originalPos;
     }
 
     IEnumerator FlashRed(SpriteRenderer sprite, float duration)
