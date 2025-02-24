@@ -18,29 +18,42 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        float inputX = Input.GetAxisRaw("Horizontal");
+        float inputY = Input.GetAxisRaw("Vertical");
+
+        movement.x = inputX;
+        movement.y = inputY;
 
         movement = movement.normalized;
-
         bool isMoving = movement.magnitude > 0;
 
         Debug.Log("isMoving: " + isMoving);
         
         if(isMoving)
         {
-            lastMoveX = movement.x;
-            lastMoveY = movement.y;
+            if (Mathf.Abs(inputX) > Mathf.Abs(inputY))
+            {
+                lastMoveX = inputX;
+                lastMoveY = 0;
+            }
+            else
+            {
+                lastMoveX = 0;
+                lastMoveY = inputY;
+            }
         }
 
-        animator.SetFloat("MoveX", movement.x);
-        animator.SetFloat("MoveY", movement.y);
+        animator.SetFloat("MoveX", lastMoveX);
+        animator.SetFloat("MoveY", lastMoveY);
         animator.SetBool("IsMoving", isMoving);
 
         if(!isMoving)
         {
             animator.SetFloat("LastMoveX", lastMoveX);
             animator.SetFloat("LastMoveY", lastMoveY);
+
+            //debug
+            Debug.Log($"Idle Transition: LastMoveX: {lastMoveX}, LastMoveY: {lastMoveY}");
         }
     }
 
