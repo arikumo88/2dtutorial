@@ -219,19 +219,42 @@ public class BattleManager : MonoBehaviour
         if (playerWin)
         {
             Debug.Log("プレイヤーの勝利!");
-            StartCoroutine(ReturnToMainScene());
         }
         else
         {
             Debug.Log("プレイヤーの敗北!");
-            StartCoroutine(ReturnToMainScene());
         }
+        StartCoroutine(ReturnToMainScene());
     }
 
     IEnumerator ReturnToMainScene()
     {
-        yield return new WaitForSeconds(2f);
+        if (audioSource != null)
+        {
+            yield return StartCoroutine(FadeOutBGM(1.0f));
+        } 
+
+        yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("MainScene");
+    }
+
+    IEnumerator FadeOutBGM(float duration)
+    {
+        if (audioSource != null)
+        {
+            float startVolume = audioSource.volume;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < duration)
+            {
+                elapsedTime += Time.deltaTime;
+                audioSource.volume = Mathf.Lerp(startVolume, 0f, elapsedTime / duration);
+                yield return null;
+            }
+
+            audioSource.Stop();
+            audioSource.volume = startVolume;
+        }
     }
 
     IEnumerator FlashRed(SpriteRenderer sprite, float duration)
