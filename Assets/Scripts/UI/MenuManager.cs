@@ -25,6 +25,14 @@ public class MenuManager : MonoBehaviour
         }
     }
     
+    void CloseMenu()
+    {
+        if (menuPanel != null)
+        {
+            menuPanel.SetActive(false);
+        }
+    }
+
     void UpdateMenuUI()
     {
         playerNameText.text = playerData.playerName;
