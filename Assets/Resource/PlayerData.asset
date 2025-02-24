@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86916ba7f743d4e47a8befc19b64ffc0, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  playerName: Hero
+  playerName: Suisei
   maxHp: 100
   currentHp: 100

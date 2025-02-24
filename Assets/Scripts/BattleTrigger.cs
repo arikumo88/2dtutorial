@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class BattleTrigger : MonoBehaviour
 {
     public Image fadePanel;
-    public float fadeDuration = 0.3f;
+    public float fadeDuration = 0.7f;
+    public AudioSource audioSource;
+    public AudioClip battleStartSE;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,6 +24,11 @@ public class BattleTrigger : MonoBehaviour
         float elapsedTime = 0f;
         Color fadeColor = fadePanel.color;
 
+        if (audioSource != null && battleStartSE != null)
+        {
+            audioSource.PlayOneShot(battleStartSE);
+        }
+        
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;

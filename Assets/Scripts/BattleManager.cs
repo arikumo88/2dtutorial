@@ -16,7 +16,10 @@ public class BattleManager : MonoBehaviour
     private int playerHp = 100;
     private int enemyHp = 100;
     private bool isPlayerTurn = true;
+    public AudioSource audioSource;
+    public AudioClip bgmClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         if (enemyObj == null)
@@ -28,6 +31,13 @@ public class BattleManager : MonoBehaviour
         enemySprite = enemyObj.GetComponent<SpriteRenderer>();
         
         UpdateBattleUI();
+
+        if (audioSource != null && bgmClip != null)
+        {
+            audioSource.clip = bgmClip;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 
     public void OnAttack()
